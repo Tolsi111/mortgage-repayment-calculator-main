@@ -1,0 +1,62 @@
+@import url("https://fonts.google.com/specimen/Plus+Jakarta+Sans");
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-background: hsl(202, 86%, 94%);
+  --color-red: hsl(4, 69%, 50%);
+  --color-lime: hsl(61, 70%, 52%);
+  --color-blue-light: hsl(203, 41%, 72%);
+  --color-result-section: hsl(200, 24%, 40%);
+  --color-result-details: hsl(202, 55%, 16%);
+  /* Border radius */
+  --border-radius-regular: 15px;
+  --border-radius-large: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Plus", "Jakarta", "Sans";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-background);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.main-wrapper {
+  width: 900px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-regular);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  background-color: var(--color-result-section);
+  border-radius: 0 var(--border-radius-regular) var(--border-radius-regular)
+    var(--border-radius-large);
+}
