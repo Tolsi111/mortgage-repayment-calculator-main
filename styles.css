@@ -1,4 +1,8 @@
-@import url("https://fonts.google.com/specimen/Plus+Jakarta+Sans");
+/* @import url("https://fonts.google.com/specimen/Plus+Jakarta+Sans"); */
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
 
 :root {
   --color-white: hsl(0, 0%, 100%);
@@ -11,13 +15,22 @@
   /* Border radius */
   --border-radius-regular: 15px;
   --border-radius-large: 70px;
+  /* Spacing */
+  --padding-regular: 20px;
+  --gap-regular: 15px;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Plus", "Jakarta", "Sans";
+  /* font-family: "Plus", "Jakarta", "Sans"; */
+  font-family: "PlusJakartaSans";
+}
+
+p {
+  font-size: 16px;
+  color: var(--color-background);
 }
 
 body {
@@ -36,7 +49,7 @@ footer {
 }
 
 .main-wrapper {
-  width: 900px;
+  width: 950px;
   height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,6 +57,7 @@ footer {
   border-radius: var(--border-radius-regular);
 }
 
+/* INPUTS */
 .inputs {
   display: flex;
   flex-direction: column;
@@ -51,12 +65,26 @@ footer {
   align-items: center; */
 }
 
+/* RESULTS */
 .results {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-regular);
+  padding: var(--padding-regular);
   background-color: var(--color-result-section);
   border-radius: 0 var(--border-radius-regular) var(--border-radius-regular)
     var(--border-radius-large);
+}
+
+.results h2 {
+  color: var(--color-background);
+}
+
+.results p {
+  text-align: center;
+}
+.illustration {
+  width: 35%;
 }
