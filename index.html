@@ -29,8 +29,20 @@
   </head>
   <body>
     <main class="main-wrapper">
-      <section class="inputs"></section>
-      <section class="results">
+      <section class="inputs">
+        <div class="header">
+          <h1>Mortgage Calculator</h1>
+          <span id="clear-all">Clear All</span>
+        </div>
+        <div class="input-group">
+          <label for="amount">Mortgage Amount</label>
+          <div class="input-container" id="amountInputContainer">
+            <span class="currency-box">€</span>
+            <input type="number" id="amount" />
+          </div>
+        </div>
+      </section>
+      <section class="results" id="empty-results">
         <img
           class="illustration"
           src="./assets/images/illustration-empty.svg"

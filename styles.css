@@ -13,11 +13,28 @@
   --color-result-section: hsl(200, 24%, 40%);
   --color-result-details: hsl(202, 55%, 16%);
   /* Border radius */
+  --border-radius-xsmall: 4px;
   --border-radius-regular: 15px;
   --border-radius-large: 70px;
   /* Spacing */
-  --padding-regular: 20px;
+  --padding-regular: 30px;
   --gap-regular: 15px;
+}
+/* REMOVE ARROWS FORM NUMBER INPUT FIELD */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* For Internet Explorer */
+input[type="number"] {
+  appearance: none;
 }
 
 * {
@@ -30,7 +47,7 @@
 
 p {
   font-size: 16px;
-  color: var(--color-background);
+  color: var(--color-blue-light);
 }
 
 body {
@@ -61,8 +78,79 @@ footer {
 .inputs {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-regular);
+  padding: var(--padding-regular);
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header h1 {
+  color: var(--color-result-details);
+}
+
+.header span {
+  color: var(--color-blue-light);
+  margin-top: auto;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: var(--color-blue-light);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid var(--color-blue-light);
+  border-radius: var(--border-radius-xsmall);
+  width: 100%;
+  height: 35px;
+}
+
+.input-container.focused {
+  border-color: var(--color-lime);
+}
+
+.currency-box {
+  /* padding: 5px 10px; */
+  background-color: var(--color-background); /* Default background */
+  color: var(--color-blue-light);
+  border-radius: var(--border-radius-xsmall) 0 0 var(--border-radius-xsmall);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30px;
+}
+
+.input-container.focused .currency-box {
+  background-color: var(--color-lime);
+}
+
+.input-container input {
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-left: var(--gap-regular);
+  color: var(--color-result-details);
+  font-weight: bold;
 }
 
 /* RESULTS */
