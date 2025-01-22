@@ -30,15 +30,36 @@
   <body>
     <main class="main-wrapper">
       <section class="inputs">
+        <!-- Header -->
         <div class="header">
           <h1>Mortgage Calculator</h1>
           <span id="clear-all">Clear All</span>
         </div>
+        <!-- Mortgage amount -->
         <div class="input-group">
           <label for="amount">Mortgage Amount</label>
           <div class="input-container" id="amountInputContainer">
-            <span class="currency-box">€</span>
+            <span class="info-box">€</span>
             <input type="number" id="amount" />
+          </div>
+        </div>
+        <!-- Mortgage term & interest rate -->
+        <div class="row">
+          <!-- Term -->
+          <div class="input-group">
+            <label for="amount">Mortgage Term</label>
+            <div class="input-container" id="termInputContainer">
+              <input type="number" id="term" />
+              <span class="info-box">years</span>
+            </div>
+          </div>
+          <!-- Rate -->
+          <div class="input-group">
+            <label for="amount">Interest Rate</label>
+            <div class="input-container" id="rateInputContainer">
+              <input type="number" id="rate" />
+              <span class="info-box">%</span>
+            </div>
           </div>
         </div>
       </section>

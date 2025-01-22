@@ -18,6 +18,7 @@
   --border-radius-large: 70px;
   /* Spacing */
   --padding-regular: 30px;
+  --padding-small: 10px;
   --gap-regular: 15px;
 }
 /* REMOVE ARROWS FORM NUMBER INPUT FIELD */
@@ -128,20 +129,28 @@ footer {
   border-color: var(--color-lime);
 }
 
-.currency-box {
-  /* padding: 5px 10px; */
-  background-color: var(--color-background); /* Default background */
+.info-box {
+  background-color: var(--color-background);
   color: var(--color-blue-light);
-  border-radius: var(--border-radius-xsmall) 0 0 var(--border-radius-xsmall);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 30px;
+  padding: 0 var(--padding-small);
+  font-weight: 500;
 }
 
-.input-container.focused .currency-box {
+.input-container.focused .info-box {
   background-color: var(--color-lime);
+}
+
+#amountInputContainer .info-box {
+  border-radius: var(--border-radius-xsmall) 0 0 var(--border-radius-xsmall);
+}
+
+#termInputContainer .info-box,
+#rateInputContainer .info-box {
+  border-radius: 0 var(--border-radius-xsmall) var(--border-radius-xsmall) 0;
 }
 
 .input-container input {
@@ -151,6 +160,13 @@ footer {
   margin-left: var(--gap-regular);
   color: var(--color-result-details);
   font-weight: bold;
+}
+
+.row {
+  width: 100%;
+  display: grid;
+  gap: var(--gap-regular);
+  grid-template-columns: 1fr 1fr;
 }
 
 /* RESULTS */
