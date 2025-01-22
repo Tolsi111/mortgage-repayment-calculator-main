@@ -36,34 +36,63 @@
           <span id="clear-all">Clear All</span>
         </div>
         <!-- Mortgage amount -->
-        <div class="input-group">
-          <label for="amount">Mortgage Amount</label>
-          <div class="input-container" id="amountInputContainer">
-            <span class="info-box">€</span>
-            <input type="number" id="amount" />
-          </div>
-        </div>
-        <!-- Mortgage term & interest rate -->
-        <div class="row">
-          <!-- Term -->
+        <form id="myForm">
           <div class="input-group">
-            <label for="amount">Mortgage Term</label>
-            <div class="input-container" id="termInputContainer">
-              <input type="number" id="term" />
-              <span class="info-box">years</span>
+            <label for="amount">Mortgage Amount</label>
+            <div class="input-container" id="amountInputContainer">
+              <span class="info-box">€</span>
+              <input type="number" id="amount" name="amount" required />
+            </div>
+            <span class="error-msg" id="amountError"
+              >This field is mandatory</span
+            >
+          </div>
+          <!-- Mortgage term & interest rate -->
+          <div class="row">
+            <!-- Term -->
+            <div class="input-group">
+              <label for="term">Mortgage Term</label>
+              <div class="input-container" id="termInputContainer">
+                <input type="number" id="term" name="term" required />
+                <span class="info-box">years</span>
+              </div>
+            </div>
+            <!-- Rate -->
+            <div class="input-group">
+              <label for="rate">Interest Rate</label>
+              <div class="input-container" id="rateInputContainer">
+                <input type="number" id="rate" name="rate" required />
+                <span class="info-box">%</span>
+              </div>
             </div>
           </div>
-          <!-- Rate -->
+          <!-- Radio buttons -->
           <div class="input-group">
-            <label for="amount">Interest Rate</label>
-            <div class="input-container" id="rateInputContainer">
-              <input type="number" id="rate" />
-              <span class="info-box">%</span>
-            </div>
+            <label for="mortgageType"> Mortgage Type </label>
           </div>
-        </div>
+          <div class="radio-input-container">
+            <input
+              type="radio"
+              name="mortgageType"
+              value="rapayment"
+              class="radio"
+            />
+            <label for="rapayment">Reapyment</label>
+          </div>
+          <div class="radio-input-container">
+            <input
+              type="radio"
+              name="mortgageType"
+              value="interestOnly"
+              class="radio"
+            />
+            <label for="interestOnly">Interest Only</label>
+          </div>
+          <button type="button" id="submitButton">Calculate Repayments</button>
+        </form>
       </section>
-      <section class="results" id="empty-results">
+      <!-- Results section -->
+      <section class="results" id="preview">
         <img
           class="illustration"
           src="./assets/images/illustration-empty.svg"
@@ -74,6 +103,16 @@
           Complete the form and click "calculate repayments" to see what your
           monthly repayments would be.
         </p>
+      </section>
+      <section class="results" id="results">
+        <img
+          class="illustration"
+          src="./assets/images/illustration-empty.svg"
+          alt="calculator"
+        />
+        <h2>These are the results!!!</h2>
+        <p>You just clicked the submit button</p>
+        <p id="amountResult"></p>
       </section>
     </main>
     <footer>
